@@ -7,10 +7,8 @@
   <% if json_data["organization"] %>
     <div class="article-organization-headline">
       <a class="org-headline-filler" href="<%= json_data["organization"]["path"] %>">
-        <span class="article-organization-headline-inner">
-          <img alt="<%= json_data["organization"]["name"] %> logo" src="<%= json_data["organization"]["profile_image_90"] %>">
-          <%= json_data["organization"]["name"] %>
-        </span>
+        <img alt="<%= json_data["organization"]["name"] %> logo" src="<%= json_data["organization"]["profile_image_90"] %>">
+        <%= json_data["organization"]["name"] %>
       </a>
    </div>
   <% end %>
@@ -29,11 +27,7 @@
     <% end %>
 
     <div>
-      <% if json_data["article"]["published_at"] %>
-        <small><%= time_ago_in_words json_data["article"]["published_at"] %> ago</small>
-      <% else %>
-        <small><%= time_ago_in_words notification.notifiable.published_at %> ago</small>
-      <% end %>
+      <small><%= time_ago_in_words json_data["article"]["published_at"] %> ago</small>
     </div>
 
     <a href="<%= json_data["article"]["path"] %>">
